@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            margin-top: 30px; 
+        }
+        .search-icon {
+            color: #007bff; 
+            margin-top: 18px;
+        }
+        
+        .nav-bar {
+            border-bottom: 1px solid #007bff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            margin-top: 20px; 
+            margin-bottom: 30px;
+        }
+    
+        .navbar-nav {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .navbar-nav a {
+            color: #007bff;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            margin-right: 20px; 
+            margin-top: 10px; 
+        }    
+    
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+            margin-top: 0;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body{
+        line-height: 1.5;
+        font-family: 'Poppins', sans-serif;
+        }
+        *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+        }
+        .container{
+        max-width: 1170px;
+        margin:auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        }
+        .row{
+        display: flex;
+        flex-wrap: wrap;
+        }
+        ul{
+        list-style: none;
+        }
+        .footer{
+        background-color: black;
+        padding: 70px 0;
+        margin-top: 20px;
+        }
+        .footer-col{
+        width: 25%;
+        padding: 0 15px;
+        }
+        .footer-col h4{
+        font-size: 18px;
+        color: #ffffff;
+        text-transform: capitalize;
+        margin-bottom: 35px;
+        font-weight: 500;
+        position: relative;
+        }
+        .footer-col h4::before{
+        content: '';
+        position: absolute;
+        left:0;
+        bottom: -10px;
+        background-color: #007bff;
+        height: 2px;
+        box-sizing: border-box;
+        width: 50px;
+        }
+        .footer-col ul li:not(:last-child){
+        margin-bottom: 10px;
+        }
+        .footer-col ul li a{
+        font-size: 16px;
+        text-transform: capitalize;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 300;
+        color: #bbbbbb;
+        display: block;
+        transition: all 0.3s ease;
+        }
+        .footer-col ul li a:hover{
+        color: #ffffff;
+        padding-left: 8px;
+        }
+        .footer-col .social-links a{
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        background-color: rgba(255,255,255,0.2);
+        margin:0 10px 10px 0;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
+        color: #ffffff;
+        transition: all 0.5s ease;
+        }
+        .footer-col .social-links a:hover{
+        color: #24262b;
+        background-color: #ffffff;
+        }
+        
+        /*responsive*/
+        @media(max-width: 767px){
+        .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+        }
+        }
+        @media(max-width: 574px){
+        .footer-col{
+        width: 100%;
+        }
+        }
+        @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.slider {
+  width: 100%;
+  height: 100vh;
+}
+
+.slider .controls {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  z-index: 2;
+}
+
+.slider .controls > div {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.slider .controls > .up:active {
+  transform: translateY(-10px);
+}
+
+.slider .controls > .down:active {
+  transform: translateY(10px);
+}
+
+.slider .controls > .up {
+  top: 920px;
+  right: 0px;
+  background: #fff;
+  color: #111;
+  border-radius: 0 5px 5px 0;
+}
+
+.slider .controls > .down {
+  bottom: -900px;
+  left: 0px;
+  background: linear-gradient(#0cbaba, #380036);
+  color: #fff;
+  border-radius: 5px 0 0 5px;
+}
+
+.slider .wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.slider .wrapper .left,
+.slider .wrapper .right {
+  width: 50%;
+  overflow: hidden;
+}
+
+.slider .wrapper .left > div,
+.slider .wrapper .right > div {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease-in-out;
+}
+
+.slider .wrapper .left > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 90px 0px 40px;
+}
+
+.slider .wrapper .left > div h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  background: -webkit-linear-gradient(90deg, #0cbaba, #380036);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.slider .wrapper .left > div p {
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 25px;
+  color: #555;
+  text-align: justify;
+}
+
+.slider .wrapper .right > div img {
+  width: 100%;
+  height: 100%;
+  object-fit: obtain;
+}
+
+.slider .wrapper .right div:nth-child(1) {
+  margin-top: -400vh;
+}
+.bebe{
+  width: 50%; 
+  margin: auto;
+  position: relative;
+  bottom: 430px; 
+  left: 720px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="nav-bar bg-transparent">
+        <h1 class="m-0 text-primary" style="margin-left: 20px; font-weight: bold; font-size: 2rem; color: #007bff;">Votre don compte, agissez maintenant!</h1>
+
+        <div class="navbar">
+            <div class="navbar-nav">
+                <a href="/" class="nav-item nav-link active">Acceuil</a>
+                <a href="about.html" class="nav-item nav-link active">À propos</a>
+                <a href="donation.html" class="nav-item nav-link active">Don</a>
+                <a href="contact.html" class="nav-item nav-link active">Contact</a>
+                <a href="Our team.html" class="nav-item nav-link active">Seisme</a>
+            </div>
+        </div>
+    </div>
+    <h1 style="color: #007bff; text-align: center;margin-bottom: 40px;">Seisme</h1>
+    <p style="text-align: left;margin-bottom: 30px;font-weight: bold;">La nuit du vendredi 8 septembre au samedi 9 septembre 2023 restera à jamais gravée dans<br>  la mémoire des Marocains. Le violent séisme a semé la terreur et la destruction,<br> laissant derrière lui une scène de désolation. Les chiffres sont accablants,<br> au moins 2.900 pertes en vies humaines, tandis que plus de 5.000 personnes <br> ont été blessées, entraînant des familles brisées et des communautés en deuil.</p>
+  <p>Au-delà de l’effroyable perte en vies humaines, les ravages sont insoutenables et <br> déchirants dans plusieurs zones impactées et situées près de l’épicentre, soit la province d’Al Haouz. <br> Des demeures désormais réduites à des amas de débris, des bâtiments effondrés, des villages <br> entiers réduits en cendre, des carcasses de voitures témoins de la forte<br> puissance de ce tremblement de terres, des infrastructures ruinées. Ce sont des images <br> d’une désolation abyssale qui transpercent l’âme et laissent une douleur <br> indélébile dans les cœurs brisés.
+    En dépit des malheurs, laissant place à la douloureuse réalité<br> que la quête de survivants devient chaque jour plus improbable,  se profile néanmoins un Maroc<br> empreint de solidarité et de compassion. Une vague d’unité submerge les cœurs, <br>toute la population participe aux opérations de sauvetage, dans l’espoir <br>de renforcer les efforts déployés.</p>
+    <a href="https://lematin.ma/express/2023/seisme-al-haouz-2497-morts-2476-blesses-nouveau-bilan/394018.html" target="_blank">Voir plus</a>
+    <div class="imgg">
+    <img class="bebe" src="https://static.lematin.ma/files/lematin/images/articles/2023/09/89b67de066ea26ebbc378424cde560e3.jpg">
+  </div>
+    <h1 style="color: #007bff; text-align: center;margin-bottom: 10px;margin-top: -310px;">Nos Causes</h1>
+    <p style="text-align: center;margin-bottom: 30px;">Soutenez-nous en faisant un don pour aider les victimes de ce séisme.<br> Votre générosité contribue à reconstruire des vies et à restaurer l'espoir.</p>
+    <div class="slider">
+        <div class="controls">
+          <div class="up">
+            <i class="fa fa-chevron-up"></i>
+          </div>
+          <div class="down">
+            <i class="fa fa-chevron-down"></i>
+          </div>
+        </div>
+  
+        <div class="wrapper">
+          <div class="left">
+            <div>
+              <h2>Impact du Séisme</h2>
+              <p>
+                Les séismes perturbent les habitats naturels des animaux, entraînant des déplacements massifs et des changements comportementaux. Les espèces aquatiques peuvent également être affectées par des perturbations dans les fonds marins. Les efforts de secours doivent prendre en compte l'impact sur la faune pour préserver l'équilibre des écosystèmes touchés.
+              </p>
+            </div>
+  
+            <div>
+              <h2>Intervention après le Séisme</h2>
+              <p>
+                Les femmes, surtout en zones rurales, subissent des difficultés accrues après un séisme. Les pertes d'infrastructures essentielles aggravent les défis liés à la santé maternelle et reproductive, tandis que la destruction des moyens de subsistance accentue leur vulnérabilité socio-économique. Il est crucial de prendre en compte ces réalités dans les interventions post-sismiques.
+              </p>
+            </div>
+  
+            <div>
+              <h2>Destruction après le Séisme</h2>
+              <p>
+                Les séismes entraînent des pertes tragiques, accentuées par la difficulté d'accéder aux soins d'urgence et aux médicaments. La recherche de secours devient une lutte supplémentaire, mettant en péril la vie des survivants. Une réponse rapide est cruciale pour minimiser ces conséquences mortelles.
+              </p>
+            </div>
+  
+            <div>
+              <h2>Ruines Post-Séisme</h2>
+              <p>
+                Les habitations en milieu rural sont souvent moins résistantes aux séismes en raison de normes de construction moins strictes, les exposant à des risques accrus de destruction. Renforcer ces normes devient crucial pour améliorer la résilience des habitations face aux secousses sismiques.
+              </p>
+            </div>
+  
+            <div>
+              <h2>Impact Durable</h2>
+              <p>
+                Les enfants endurent des souffrances profondes lors des séismes. Outre les risques directs, ils font face à des traumatismes émotionnels et à des perturbations éducatives. Les efforts de secours doivent se concentrer sur le soutien psychosocial et la réhabilitation éducative pour atténuer les séquelles.
+              </p>
+            </div>
+          </div>
+          <div class="right">
+            <div>
+              <img src="https://img.20mn.fr/xAmE9-u-TFaLIvd9KzcjvSk/688x441_un-garcon-marche-dans-les-debris-pres-de-l-epicentre-d-un-tremblement-de-terre-a-amizmiz-au-maroc-le-10-septembre-2023" alt="seisme" />
+            </div>
+  
+            <div>
+              <img src="https://img.20mn.fr/q_Jr6NTRTciS7jxMauxhgSk/688x441_a-amizmiz-tout-proche-de-l-epicentre-du-seisme-province-d-al-haouz-le-11-septembre-2023-au-maroc" alt="seisme" />
+            </div>
+  
+            <div>
+              <img src="https://img.20mn.fr/lLaG0TTSRLqKDHlFvbZR6yk/688x441_des-personnes-transportent-les-restes-d-une-victime-du-tremblement-de-terre-meurtrier-de-magnitude-6-8-du-8-septembre-dans-le-village-d-imi-n-tala-pres-d-amizmiz-dans-le-centre-du-maroc-le-10-septembre-2023" alt="seisme" />
+            </div>
+  
+            <div>
+              <img src="https://img.20mn.fr/SjatSIuESt6YyzUoWAVYwyk/960x614_une-femme-dans-son-village-de-la-zone-montagneuse-de-tizi-n-test-dans-la-province-de-taroudant-l-une-des-plus-devastees-du-maroc-frappe-par-le-seisme-le-11-septembre-2023" alt="seisme" />
+            </div>
+  
+            <div>
+              <img src="https://img.20mn.fr/PO_ZkowcQ8qLHozU3qtxPik/688x441_un-chat-marche-dans-les-decombres-apres-un-tremblement-de-terre-dans-le-village-de-moulay-ibrahim-pres-de-marrakech-au-maroc-le-samedi-9-septembre-2023" alt="seisme" />
+            </div>
+          </div>
+        </div>
+      </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Accueil</h4>
+                    <ul>
+                        <li><a href="acceuil.html">Derniers évènements</a></li>
+                        <li><a href="acceuil.html">Statistiques</a></li>
+                        <li><a href="acceuil.html">Témoignages</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>À Propos</h4>
+                    <ul>
+                        <li><a href="about.html">À propos de nous</a></li>
+                        <li><a href="about.html">Statistiques</li>
+                        <li><a href="about.html">Nos services</a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Don</h4>
+                    <ul>
+                        <li><a href="donation.html">formulaire</a></li>
+                        <li><a href="donation.html"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <div class="social-links">
+                        <a href="contact.html"><i class="fab fa-facebook-f"></i></a>
+                        <a href="contact.html"><i class="fab fa-twitter"></i></a>
+                        <a href="contact.html"><i class="fab fa-instagram"></i></a>
+                        <a href="contact.html"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </footer>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+   
+   <script>
+    let slider = document.querySelector(".slider");
+let currentSlide = 0;
+let totalSlides = slider.querySelectorAll(".wrapper .left > div").length - 1;
+
+slider.querySelector(".controls .up").addEventListener("click", function () {
+  if (currentSlide == 0) {
+    return;
+  }
+  currentSlide--;
+  slider.querySelector(".wrapper .left div").style.marginTop = `${
+    currentSlide * -100
+  }vh`;
+  slider.querySelector(".wrapper .right div").style.marginTop = `${
+    (totalSlides - currentSlide) * -100
+  }vh`;
+});
+
+slider.querySelector(".controls .down").addEventListener("click", function () {
+  if (currentSlide == totalSlides) {
+    return;
+  }
+  currentSlide++;
+  slider.querySelector(".wrapper .left div").style.marginTop = `${
+    currentSlide * -100
+  }vh`;
+  slider.querySelector(".wrapper .right div").style.marginTop = `${
+    (totalSlides - currentSlide) * -100
+  }vh`;
+});
+
+   </script>
+</body>
+</html>

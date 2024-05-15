@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site des Dons</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+ <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        margin-top: 30px; 
+    }
+    .search-icon {
+        color: #007bff; 
+        margin-top: 18px;
+    }
+    
+    .nav-bar {
+        border-bottom: 1px solid #007bff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        margin-top: 5px; 
+        margin-bottom: 30px;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .navbar-nav a {
+        color: #007bff;
+        font-weight: bold;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        margin-right: 20px; 
+        margin-top: 10px; 
+    }    
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        font-size: 24px;
+        margin-top: 0;
+    }
+
+    .text-primary {
+        color: #007bff !important;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 70px 50px;
+        color: black;
+        background-color: #f8f9fa;
+        flex-grow: 1;
+        background-image: url("https://www.challenge.ma/wp-content/uploads/2023/09/S9-1024x577.jpeg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 500px;
+        width: 100%;
+        margin-bottom: 0px; 
+    }
+    
+    .header-content {
+        max-width: 400px;
+        flex-direction: column;
+        text-align: left;
+        color: black;
+        padding: 20px;
+    }
+    .header-content h1 {
+        font-size: 2.8rem;
+        margin-bottom: 10px; 
+        margin-top:40px;
+        color: black;
+        margin-top: -10px; 
+        font-weight: bold;
+        text-align: left;
+    }
+    .header p {
+        font-size: 1.5rem;
+        margin-bottom: 50px;
+        color: #555;
+        margin-top:40px;
+        text-align: left;
+    }
+    
+    .header .btn-primary {
+        font-size: 1rem; 
+        background-color: transparent;
+        color: #007bff;
+        border: 2px solid #007bff;
+        border-radius: 25px;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        margin-top: auto; 
+        padding: 10px 18px;
+        display: inline-block;
+        text-decoration: none;
+        cursor: pointer;
+        margin-right: 120px; 
+    }
+    
+    .header .btn-primary:hover {
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .search-icon {
+        cursor: pointer;
+    margin-bottom: 20px;
+    }
+
+    .search-container {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        z-index: 1000;
+        padding: 5px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    .search-container input[type="text"] {
+        width: 150px;
+        padding: 8px;
+        border: none;
+        border-bottom: 1px solid #ddd;
+        outline: none;
+        margin-right: 5px;
+    }
+
+    .search-container input[type="text"]:focus {
+        border-bottom-color: #007bff;
+    }
+
+    .search-container button {
+        padding: 8px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .search-container button:hover {
+        background-color: #0056b3;
+    }
+
+    .section-center {
+        text-align: center;
+        margin-top: auto;
+        padding-bottom: 50px;
+    }
+
+    .section-title {
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+
+    .section-center h3 {
+        font-size: 27px;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+    .icon-thumb img {
+        width: 90px;
+        height: auto;
+        border-radius: 50%;
+        margin-right: 10px; 
+    }
+    
+    .icon-content {
+        flex: 1;
+    }
+    .icon-content h5 {
+        color: black;
+        font-weight: bold;
+    }
+    
+    .first-donate-icon {
+        margin-right: left;
+    }
+    
+    .donate-icon-items {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 20px auto;
+    }
+    
+    .left-icon,
+    .center-icon,
+    .right-icon {
+    flex: 1;
+    max-width: 250px; 
+    text-align: center;
+    }
+    
+    .icon-thumb img {
+    width: 90px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    }
+    
+    .section-center {
+        height: 200px;
+        text-align: center; 
+        margin: 0 auto; 
+    }
+    
+    .section-title {
+        color: black;
+        font-size: 35px; 
+        margin-bottom: 10px;
+        margin-top: 70px;
+        font-weight: bold; 
+    }        
+    
+    .section-center p {
+        font-size: 18px; 
+    }
+    .custom-background {
+        background-image: url("https://www.challenge.ma/wp-content/uploads/2023/09/S4-1024x576.jpeg");
+        background-size: cover;
+        background-position: center center;
+        padding-top: 150px;
+        padding-bottom: 80px; 
+    }
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 10% 0;
+    }
+    .review-card {
+        background-color: #f5f5f5;
+        border-radius: 10px;
+        padding: 20px;
+        width: 300px;
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+    }
+    .img-area {
+        width: 80px;
+        height: 80px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-right: 25px;
+    }
+    .img-area img {
+        width: 100%;
+    }
+    .header-content {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .info h4 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 600;
+    }
+    .info p {
+        margin: 5px 0 0;
+        font-size: 14px;
+        font-weight: 400;
+        color: #666;
+    }
+    .single-review p {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.7;
+        color: #333;
+    }
+    .review-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+        font-size: 14px;
+        color: #666;
+    }
+    .rating {
+        display: flex;
+    }
+    .rating span {
+        color: #000;
+        font-size: 18px;
+    }
+    .rating span.active {
+        color: #fbc02d;
+    }
+    @media screen and (max-width: 767px) {
+        .wrapper {
+            flex-direction: column;
+            align-items: center;
+            margin-top: 80px;
+        }
+        .review-card {
+            width: 85%;
+            margin-top: 100px;
+        }
+    }
+    
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    body{
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+    }
+    *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    }
+    .container{
+    max-width: 1170px;
+    margin:auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    }
+    .row{
+    display: flex;
+    flex-wrap: wrap;
+    }
+    ul{
+    list-style: none;
+    }
+    .footer{
+    background-color: black;
+    padding: 70px 0;
+    margin-top: 0;
+    }
+    .footer-col{
+    width: 25%;
+    padding: 0 15px;
+    }
+    .footer-col h4{
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+    }
+    .footer-col h4::before{
+    content: '';
+    position: absolute;
+    left:0;
+    bottom: -10px;
+    background-color: #007bff;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+    }
+    .footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+    }
+    .footer-col ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+    }
+    .footer-col ul li a:hover{
+    color: #ffffff;
+    padding-left: 8px;
+    }
+    .footer-col .social-links a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255,255,255,0.2);
+    margin:0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+    }
+    .footer-col .social-links a:hover{
+    color: #24262b;
+    background-color: #ffffff;
+    }
+    
+    /*responsive*/
+    @media(max-width: 767px){
+    .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+    }
+    }
+    @media(max-width: 574px){
+    .footer-col{
+    width: 100%;
+    }
+    }
+    @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+.cards {
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    margin-top: 60px;
+    margin: 0 auto;
+    max-width: 90%;
+    margin-top: 50px;
+}
+
+.card--1 .card__img, .card--1 .card__img--hover {
+    background-image: url('https://www.challenge.ma/wp-content/uploads/2023/09/S4-1024x576.jpeg');
+}
+
+.card--2 .card__img, .card--2 .card__img--hover {
+    background-image: url('https://www.challenge.ma/wp-content/uploads/2023/09/S13-1024x576.jpeg');
+}
+.card--3 .card__img, .card--3 .card__img--hover {
+    background-image: url('https://www.challenge.ma/wp-content/uploads/2023/09/S8-1024x577.jpeg');
+}
+.card__like {
+    width: 18px;
+}
+
+.card__clock {
+    width: 15px;
+  vertical-align: middle;
+    fill: #AD7D52;
+}
+.card__time {
+    font-size: 12px;
+    color: #AD7D52;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.card__clock-info {
+    float: right;
+}
+
+.card__img {
+  visibility: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 235px;
+  border-top-left-radius: 12px;
+border-top-right-radius: 12px;
+  
+}
+
+.card__info-hover {
+    position: absolute;
+    padding: 16px;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+}
+
+.card__img--hover {
+  transition: 0.2s all ease-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+  position: absolute;
+    height: 235px;
+  border-top-left-radius: 12px;
+border-top-right-radius: 12px;
+top: 0;
+  
+}
+.card {
+  margin-right: 25px;
+  transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+  background-color: #fff;
+    width: 33.3%;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0,0.1);
+}
+.card:hover {
+  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
+    transform: scale(1.10, 1.10);
+}
+
+.card__info {
+z-index: 2;
+  background-color: #fff;
+  border-bottom-left-radius: 12px;
+border-bottom-right-radius: 12px;
+   padding: 16px 24px 24px 24px;
+}
+
+.card__category {
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 500;
+  color: #868686;
+}
+
+.card__title {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-family: 'Roboto Slab', serif;
+}
+
+.card__by {
+    font-size: 12px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+}
+
+.card__author {
+    font-weight: 600;
+    text-decoration: none;
+    color: #AD7D52;
+}
+
+.card:hover .card__img--hover {
+    height: 100%;
+    opacity: 0.3;
+}
+
+.card:hover .card__info {
+    background-color: transparent;
+    position: relative;
+}
+
+.card:hover .card__info-hover {
+    opacity: 1;
+}
+h1 {
+    font-size: 1.2rem;
+    font-weight: normal; 
+    text-align: center; 
+    margin: 20px 0; /* Marge supérieure et inférieure pour l'espace autour du texte */
+}
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900&subset=latin-ext');
+img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.blog-item img {
+  display: block;
+}
+
+.blog-item a {
+    display: flex;
+    padding: 50px;
+    overflow: hidden;
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+    color: #333;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    border-radius: 6px;
+    margin-bottom: 50px;
+    text-decoration: none;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.blog-item a:hover {
+    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.2);
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.blog-item .icon {
+    width: 35%;
+    object-fit: cover;
+    margin-right: 50px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 15px 26px rgba(0, 0, 0, 0.4);
+}
+
+.blog-item .content {
+    width: 65%;
+}
+
+.blog-item .content .title {
+    font-size: 21px;
+    text-transform: capitalize;
+    color: #25aae1;
+    font-weight: 600;
+    font-family: 'Lato', sans-serif;
+}
+
+.blog-item .content .title .blog-date {
+    font-size: 12px;
+    margin-left: 20px;
+    color: #333;
+    font-family: 'Lato', sans-serif;
+}
+
+.blog-item .content .title .blog-date:before {
+    content: '/';
+    color: #2bb673;
+    font-size: 25px;
+    top: auto;
+    position: relative;
+    margin-right: 10px;
+}
+
+.blog-item .content .rounded {
+    margin-left: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.blog-item .item-arrow {
+    height: 20px;
+    width: 15%;
+    position: relative;
+    text-align: center;
+    font-size: 35px;
+    left: 0;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.blog-item a:hover > .item-arrow {
+    /*padding-left: 40px;*/
+    color: #25aae1;
+    left: 30px;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.rounded {
+    width: 70px;
+    height: 5px;
+    border-radius: 6px;
+    background-image: linear-gradient(to right, #25aae1, #40e495);
+    /* background: #2bb769; */
+    margin-left: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px){
+
+    .blog-item .content {
+        width: 100%;
+        margin-top: 45px;
+        margin-bottom: 20px;
+    }
+
+    .blog-item .content .title {
+        font-size: 18px;
+    }
+
+    .blog-item .item-arrow {
+        margin: auto;
+    }
+
+    .blog-item .icon {
+        width: 100%;
+    }
+
+    .blog-item .icon img {
+        width: 200%;
+        height: 150px;
+        object-fit: cover;
+    }
+
+    .blog-item {
+        width: 92%;
+        margin: auto;
+    }
+
+    .blog-item a {
+        display: block;
+        padding: 30px;
+    }
+
+}
+.centered {
+    margin-top: 20px;
+    text-align: center; /* Centrer horizontalement */
+}
+* {
+    box-sizing: border-box;
+  }
+  .panel {
+    width: 1200px;
+    height: 400px;
+    background: #007bff;
+    box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+    border-radius: 6px;
+    overflow: hidden;
+    margin: auto;
+  }
+  .panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    height: 60px;
+    background: #fff;
+  }
+   
+  .title {
+    color: #5E6977;
+    font-weight: 500;
+  }
+   
+  .calendar-views span {
+    font-size: 14px;
+    font-weight: 300;
+    color: #BDC6CF;
+    padding: 6px 14px;
+    border: 2px solid transparent;
+  }
+  .panel-body {
+    display: flex;
+    height: 340px;
+  }
+  .categories {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-basis: 25%;
+    padding: 39px 0px 41px 26px;
+  }
+  .category {
+    display: flex;
+    flex-direction: column;
+  }
+  .category span:first-child {
+    font-weight: 300;
+    font-size: 14px;
+    opacity: 0.6;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .category span:last-child {
+    font-size: 32px;
+    font-weight: 300;
+    color: #fff;
+  }
+  .chart {
+    width:100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    position: relative;
+  }
+   
+  .operating-systems {
+    display: flex;
+    justify-content: space-between;
+    width: 215px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+  span[class*="-os"] {
+    font-size: 14px;
+    font-weight: 300;
+    font-size: 14px;
+    color: #c3c6e4;  
+  }
+  span[class*="-os"] span {
+    width: 9px;
+    height: 9px;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 9px;
+  }
+  .android-os span {
+    background: #80B354;
+  }
+  .ios-os span {
+    background: #F5A623;
+  }
+  .windows-os span {
+    background: #F8E71C;
+  }
+  div[class*="-stats"] {
+    position: absolute;
+    color: #fff;
+    font-size: 12px;
+    display: flex;
+    opacity: 0;
+    animation: showstats 0.6s linear 1.8s;
+    animation-fill-mode: forwards;  
+  }
+   
+  div[class*="-stats"] span {
+    height: 12px;
+    width: 12px;
+    margin: 0 7px;
+    background-color: #fff;
+    border: 2px solid transparent;
+    border-radius: 50%;  
+  }
+   
+  .android-stats {
+    bottom: 130px;
+    height: auto;
+    right: 890px;
+  }
+   
+  .ios-stats {
+    bottom: 83px;
+    left: 100px;
+  }
+   
+  .windows-stats {
+    bottom: 133px;
+    right: 430px;
+  }
+  div[class*="-stats"] span:hover {
+    transform: scale(1.4) rotate(0.02deg);
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+   
+  .android-stats span:hover {
+    background: #80B354;
+    
+  }
+   
+  .ios-stats span:hover {
+    background: #F5A623;
+  }
+   
+  .windows-stats span:hover {
+    background: #F8E71C;
+  }
+  .dataset-1 {
+    animation: raise .8s linear 1;
+    transform-origin: bottom;
+  }
+  .dataset-2 {
+    animation: raise 1.6s linear 1;
+    transform-origin: bottom;
+  }
+  .dataset-3 {
+    animation: raise 1.8s linear 1;
+    transform-origin: bottom;
+  }
+   
+  .lines {
+    opacity: 0;
+    animation: showlines 0.6s linear 1.6s;
+    animation-fill-mode: forwards;  
+  }
+   
+  @keyframes showlines {
+    to { opacity: 0.2; }
+  }
+   
+  @keyframes showstats {
+    to { opacity: 1; }
+  }
+   
+  @keyframes raise {
+    0% { transform: scaleY(0.01); }
+    75% { transform: scaleY(1.1); }
+    100% { transform: scaleY(1); }
+  }
+ </style>
+</head>
+<body>
+    <div class="nav-bar bg-transparent">
+        <h1 class="m-0 text-primary" style="margin-left:auto; font-weight: bold; font-size: 2rem;">Votre don compte, agissez maintenant!</h1>
+        <div class="navbar">
+            <div class="navbar-nav">
+                <a href="/" class="nav-item nav-link active">Acceuil</a>
+                <a href="about.html" class="nav-item nav-link active">À propos</a>
+                <a href="donation.html" class="nav-item nav-link active">Don</a>
+                <a href="contact.html" class="nav-item nav-link active">Contact</a>
+                <a href="Our team.html" class="nav-item nav-link active">Seisme</a>
+            </div>
+        </div>
+    </div>
+        <div class="header bg-white p-0">
+            <div class="header bg-white p-0">
+                <div class="header-content">
+                    <h1 class="display-5 animated fadeIn mb-4">Aidez-nous à faire la différence: Faites un don!</h1>
+                </div>
+            </div>     
+      </div>
+    </div>
+    <div class="centered">
+        <a href="donation.html" class="btn btn-primary py-3 px-5 me-3 animated fadeIn">Faire un Don</a>
+    </div>
+    
+    <p class="section-title" style="font-size: 30px; font-weight: bold; margin-bottom: 0;margin-left:500px;margin-top:30px;">
+        Derniers évènements
+    </p>
+    <h1>Tout cela signifie que donner est un élément de bonheur bien plus important que recevoir.<br> Être capable de donner nous donne le sentiment d’avoir un impact important sur la vie de quelqu’un.</h1>
+    <section class="cards">
+        <article class="card card--1">
+          <div class="card__info-hover">
+              <div class="card__clock-info">
+                <svg class="card__clock"  viewBox="0 0 24 24"><path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z" />
+                </svg><span class="card__time">15 min</span>
+              </div>
+            
+          </div>
+          <div class="card__img"></div>
+          <a href="#" class="card_link">
+             <div class="card__img--hover"></div>
+           </a>
+          <div class="card__info">
+            <span class="card__category">Séisme </span>
+            <h3 class="card__title">Suite à la secousse, le ministère a rapporté 1 604 décès dans la province d’Al Haouz, 976 dans la province de Taroudant, et un décès dans la province d’Essaouira. Le ministère a également précisé que parmi les personnes décédées, que Dieu les accueille dans Son vaste paradis, 2 854 ont été enterrées.</h3>
+            <span class="card__by">by <a href="#" class="web_site" title="author">Challenge.ma</a></span>
+          </div>
+        </article>  
+        <article class="card card--2">
+          <div class="card__info-hover">
+              <div class="card__clock-info">
+                <svg class="card__clock"  viewBox="0 0 24 24"><path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z" />
+                </svg><span class="card__time">5 min</span>
+              </div>
+            
+          </div>
+          <div class="card__img"></div>
+          <a href="#" class="card_link">
+             <div class="card__img--hover"></div>
+           </a>
+          <div class="card__info">
+            <span class="card__category">Séisme</span>
+            <h3 class="card__title">Les autorités publiques poursuivent leurs efforts afin de secourir, évacuer et prendre en charge les blessés et de débloquer les routes endommagées suite au séisme, tout en mobilisant l’ensemble des moyens nécessaires pour gérer les répercussions de cette douloureuse tragédie.</h3>
+            <span class="card__by">by <a href="#" class="web_site" title="author">hespress</a></span>
+          </div>
+        </article>  
+                  
+          
+        <article class="card card--3">
+            <div class="card__info-hover">
+                <div class="card__clock-info">
+                  <svg class="card__clock"  viewBox="0 0 24 24"><path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M19.03,7.39L20.45,5.97C20,5.46 19.55,5 19.04,4.56L17.62,6C16.07,4.74 14.12,4 12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22C17,22 21,17.97 21,13C21,10.88 20.26,8.93 19.03,7.39M11,14H13V8H11M15,1H9V3H15V1Z" />
+                  </svg><span class="card__time">20 min</span>
+                </div>
+              
+            </div>
+            <div class="card__img"></div>
+            <a href="#" class="card_link">
+               <div class="card__img--hover"></div>
+             </a>
+            <div class="card__info">
+              <span class="card__category">Séisme</span>
+              <h3 class="card__title">Un budget de 32,7 millions de dirhams a été mobilisé en 2023 pour offrir une assistance socio-psychologique à 46.000 familles touchées par le séisme d’Al Haouz, a déclaré, mardi à Rabat, la ministre de la Solidarité, de l’insertion sociale et de la famille, Aawatif Hayar.</h3>
+              <span class="card__by">by <a href="#" class="web_site" title="author">maroc-diplomatique</a></span>
+            </div>
+          </article>
+          
+          </section>
+    <div class="section-center wow fadeInDown" data-wow-delay="0.4s">
+        <h3 class="section-title">
+            Ensemble pour un Avenir Meilleur :<br> Soutenez la Générosité, Faites un Don !
+        </h3>
+        <p>
+            Votre générosité peut avoir un impact considérable après des événements récents. Chaque don, qu'il soit modeste ou substantiel, incarne l'espoir et suscite<br> des sourires. Ces contributions sont bien plus que de l'argent ; elles offrent un nouveau départ aux familles et communautés touchées, les aidant à retrouver<br> leur stabilité. Elles représentent l'élan d'une main tendue, offrant confort, assistance et réconfort à ceux qui en ont le plus besoin. 
+        </p>
+    </div>    
+    <div class="container">
+        <div class="donate-icon-items">
+            <div class="left-icon col-lg-4 col-md-6 wow animate__animated animate__bounceInLeft" data-wow-duration="2s">
+                <div class="icon-thumb">
+                    <img src="https://nextgenerationdev.com/demos/html/donate/donate/assets/images/icon/icon1.png" alt="icon-image">
+                </div>
+                <div class="icon-content">
+                    <h5>Devenez bénévole</h5>
+                    <p>Devenez bénévole. Chaque contribution financière, quelle que soit sa taille, façonne un avenir meilleur pour ceux dans le besoin.</p>
+                </div>
+            </div>
+            <div class="center-icon col-lg-4 col-md-6 wow animate__animated animate__bounceInUp" data-wow-duration="2s">
+                <div class="icon-thumb">
+                    <img src="https://nextgenerationdev.com/demos/html/donate/donate/assets/images/icon/icon2.png" alt="icon-image">
+                </div>
+                <div class="icon-content">
+                    <h5>Obtenez de l'aide directement</h5>
+                    <p>Recevez un soutien direct et immédiat : chaque assistance compte pour reconstruire des vies.</p>
+                </div>
+            </div>
+            <div class="right-icon col-lg-4 col-md-6 wow animate__animated animate__bounceInRight" data-wow-duration="2s">
+                <div class="icon-thumb">
+                    <img src="https://nextgenerationdev.com/demos/html/donate/donate/assets/images/icon/icon3.png" alt="icon-image">
+                </div>
+                <div class="icon-content">
+                    <h5>Envoyez-nous un don</h5>
+                    <p>Participez en envoyant un don: votre geste peut changer des vies et soutenir la reconstruction après des événements difficiles.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid fact bg-dark my-5 py-5 custom-background">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
+                    <i class="fa fa-globe fa-2x text-white mb-3"></i>
+                    <h2 class="text-white mb-2" data-toggle="counter-up">6</h2>
+                    <p class="text-white mb-0">Régions Affectées</p>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
+                    <i class="fa fa-user fa-2x text-white mb-3"></i>
+                    <h2 class="text-white mb-2" data-toggle="counter-up">6 125</h2>
+                    <p class="text-white mb-0">Personnes Touchées</p>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeIn;">
+                    <i class="fa fa-home fa-2x text-white mb-3"></i>
+                    <h2 class="text-white mb-2" data-toggle="counter-up">70 millions</h2>
+                    <p class="text-white mb-0">Dommages Matériels</p>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeIn;">
+                    <i class="fa fa-user fa-2x text-white mb-3"></i>
+                    <h2 class="text-white mb-2" data-toggle="counter-up">2 960</h2>
+                    <p class="text-white mb-0">personnes mortes</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3 style="color: black; text-align: center; font-weight: bold; margin-top: 10px;">Statistiques</h3>
+    <div class="panel">
+        <div class="panel-header">
+
+        </div>
+      
+        <div class="panel-body">
+          <div class="categories">
+            <div class="category">
+              <span>Personnes mortes</span>
+              <span>2 960</span>
+            </div>
+            <div class="category">
+              <span>Personnes Touchées</span>
+              <span>6 125</span>
+            </div>
+            <div class="category">
+              <span>Régions Affectées</span>
+              <span>6</span>
+            </div>
+          </div>
+      
+          <div class="chart">
+            <div class="operating-systems">
+              <span class="ios-os">
+                <span></span>Modérée
+              </span>
+              <span class="windows-os">
+                <span></span>Forte
+              </span>
+              <span class="android-os">
+                <span></span>Extrême
+              </span>
+            </div>
+            <div class="android-stats">
+                5,4<span></span>
+            </div>
+            <div class="ios-stats">
+              <span></span>3,9
+            </div>
+            <div class="windows-stats">
+              <span></span>4,4
+            </div>
+            <!--   Place the SVG here     -->
+            <svg width="600" height="1000" class="data-chart" viewBox="0 0 563 204" xmlns="http://www.w3.org/2000/svg">
+              <g fill="none" fill-rule="evenodd">
+                <path class="dataset-1" d="M30.046 97.208c2.895-.84 5.45-2.573 7.305-4.952L71.425 48.52c4.967-6.376 14.218-7.38 20.434-2.217l29.447 34.46c3.846 3.195 9.08 4.15 13.805 2.52l31.014-20.697c4.038-1.392 8.485-.907 12.13 1.32l3.906 2.39c5.03 3.077 11.43 2.753 16.124-.814l8.5-6.458c6.022-4.577 14.563-3.676 19.5 2.056l54.63 55.573c5.622 6.526 15.686 6.647 21.462.258l37.745-31.637c5.217-5.77 14.08-6.32 19.967-1.24l8.955 7.726c5.42 4.675 13.456 4.63 18.82-.11 4.573-4.036 11.198-4.733 16.508-1.735l61.12 34.505c4.88 2.754 10.916 2.408 15.45-.885L563 90.915V204H0v-87.312-12.627c5.62-.717 30.046-6.852 30.046-6.852z" fill="#7DC855" opacity=".9" stroke="#7DC855" stroke-width="4"/>
+                <path class="dataset-2" d="M563 141.622l-21.546-13.87c-3.64-2.343-8.443-1.758-11.408 1.39l-7.565 8.03c-3.813 4.052-10.378 3.688-13.718-.758L469.83 84.58c-3.816-5.08-11.588-4.687-14.867.752l-28.24 46.848c-2.652 4.402-8.48 5.673-12.74 2.78l-15.828-10.76c-3.64-2.475-8.55-1.948-11.575 1.245l-53.21 43.186c-3.148 3.32-8.305 3.74-11.953.974l-100.483-76.2c-3.364-2.55-8.06-2.414-11.27.326l-18.24 15.58c-3.25 2.773-8.015 2.874-11.38.24L159.91 93.79c-3.492-2.733-8.467-2.51-11.697.525l-41.58 39.075c-2.167 2.036-5.21 2.868-8.117 2.218L39.05 112.5c-4.655-1.808-9.95-.292-12.926 3.7L0 137.31V204h563v-62.378z" fill="#F8E71C" opacity=".6"stroke="#F8E71C" stroke-width="2"/>
+                <path class="dataset-3" d="M0 155.59v47.415c0 .55.448.995 1 .995h562v-43.105l-40.286 11.83c-3.127.92-6.493.576-9.368-.954l-53.252-28.32c-5.498-2.924-12.323-1.365-15.987 3.654l-25.48 34.902c-4.08 5.59-12.478 5.513-16.455-.148L360.06 121.92c-2.802-4.073-8.2-5.457-12.633-3.237L322.2 133.827c-4.415 2.21-9.792.848-12.604-3.196L282.78 99.25c-4.106-5.906-12.978-5.6-16.665.57l-26.757 44.794c-3.253 5.446-10.753 6.468-15.36 2.092l-16.493-15.673c-4.27-4.058-11.138-3.522-14.72 1.148l-23.167 30.21c-3.722 4.852-10.937 5.207-15.12.744l-44.385-47.345c-5.807-5.427-14.83-5.508-20.734-.19l-55.76 48.31c-3.76 3.26-9.127 3.93-13.582 1.703L0 155.59z" fill="#F5A623" opacity=".7"stroke="#F5A623" stroke-width="2"/>
+                <path class="lines" fill="#FFF" opacity=".4" stroke-width="5"  d="M0 203h563v1H0zM0 153h563v1H0zM0 102h563v1H0zM0 51h563v1H0zM0 0h563v1H0z"/>
+              </g>
+      </svg>
+          </div>
+        </div>
+      </div>
+    <div class="blog-item">
+        <a href="#">
+            <div class="icon">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.NJWe6qTDIJkjKHfJsLrQkAHaE7&pid=Api&P=0&h=180" alt="">
+            </div>
+            <div class="content">
+                <div class="title">Le Maroc a été touché vendredi soir par un séisme d'une magnitude 6,8 sur l'échelle de Richter dans la province d'Al-Haouz, au sud-ouest de Marrakech, faisant plus de deux mille victimes.  <span class="blog-date">11.09.2023</span></div>
+                <div class="rounded"></div>
+                <p>
+                    Le tremblement de terre de la nuit de vendredi à samedi, de magnitude 7 selon le Centre marocain pour la recherche scientifique et technique (6,8 selon le service sismologique américain), est le plus puissant à avoir jamais été mesuré au Maroc. Le Centre national pour la recherche scientifique et technique (CNRST) basé à Rabat a indiqué que le séisme était d'une magnitude de 7 degrés sur l'échelle de Richter et que son épicentre se situait dans la province d'Al-Haouz, au sud-ouest de la ville touristique de Marrakech.
+                </p>
+            </div>
+    
+            <div class="item-arrow">
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+            </div>
+        </a>
+    
+    </div>
+    <p class="section-title" style="font-size: 34px; font-weight: bold; margin-bottom: -80px; margin-left: 440px; margin-top: 80px;">
+        Ce que disent nos donateurs
+    </p>
+    
+    <div class="wrapper">
+		<div class="review-card">
+			<div class="header-content">
+				<div class="img-area">
+          <img alt="customer1" src="https://tse4.mm.bing.net/th?id=OIP.QC9usZALO85Tr12z84owEwHaHa&pid=Api&P=0&h=180">
+        </div>
+				<div class="info">
+					<h4>Sara Faji</h4>
+					<p>Maketing Manager</p>
+				</div>
+			</div>
+			<div class="single-review">
+				<p>Votre engagement à apporter un changement significatif est une source d'inspiration. Chaque action entreprise en faveur des personnes dans le besoin incarne la solidarité et l'espoir. Votre approche transparente et l'impact réel que vous générez témoignent d'une véritable volonté de faire la différence</p>
+			</div>
+			<div class="review-footer">
+				<div class="rating">
+					<span class="active">★</span> 
+          <span class="active">★</span> 
+          <span class="active">★</span> 
+          <span class="">★</span> 
+          <span class="">★</span>
+				</div>
+				<p>Reviewed on 08/01/2023</p>
+			</div>
+		</div>
+		<div class="review-card">
+			<div class="header-content">
+				<div class="img-area">
+          <img alt="customer1" src="https://tse2.mm.bing.net/th?id=OIP.RHHh-PXw-kS21_pD9jmrpQHaLH&pid=Api&P=0&h=180">
+        </div>
+				<div class="info">
+					<h4>Amal Alami</h4>
+					<p>Graphics Expert</p>
+				</div>
+			</div>
+			<div class="single-review">
+				<p>Je suis profondément inspirée par la mission et l'impact de votre organisation. En tant que femme, je crois fermement à l'autonomisation des communautés marginalisées, et votre travail en ce sens est extraordinaire. </p>
+			</div>
+			<div class="review-footer">
+				<div class="rating">
+					<span class="active">★</span> 
+          <span class="active">★</span> 
+          <span class="active">★</span> 
+          <span class="">★</span> 
+          <span class="">★</span>
+				</div>
+				<p>Reviewed on 01/05/2023</p>
+			</div>
+		</div>
+		<div class="review-card">
+			<div class="header-content">
+				<div class="img-area">
+          <img alt="customer1" src="https://tse2.mm.bing.net/th?id=OIP.RfYBZWni_bdaM5IEgVGBswHaLI&pid=Api&P=0&h=180">
+        </div>
+				<div class="info">
+					<h4>Mariam Rabi</h4>
+					<p>Dentist</p>
+				</div>
+			</div>
+			<div class="single-review">
+				<p>Je voulais partager mon expérience incroyable en utilisant cette application pour effectuer des dons. La plateforme est conviviale, offrant une variété d'organisations caritatives et de causes à soutenir.</p>
+			</div>
+			<div class="review-footer">
+				<div class="rating">
+					<span class="active">★</span> 
+          <span class="active">★</span> 
+          <span class="active">★</span> 
+          <span class="active">★</span> 
+          <span class="active">★</span>
+				</div>
+				<p>Reviewed on 17/03/2023</p>
+			</div>
+		</div>
+        <div class="review-card">
+			<div class="header-content">
+				<div class="img-area">
+          <img alt="customer1" src="https://tse1.mm.bing.net/th?id=OIP.hCfHyL8u8XAbreXuaiTMQgHaHZ&pid=Api&P=0&h=180">
+        </div>
+				<div class="info">
+					<h4>Mohammed Chedd</h4>
+					<p>Web Designer</p>
+				</div>
+			</div>
+			<div class="single-review">
+				<p>En tant que donateur, je suis fier de contribuer à votre mission et de faire partie de cette initiative qui apporte un réel changement dans la vie des autres.</p>
+			</div>
+			<div class="review-footer">
+				<div class="rating">
+					<span class="active">★</span> 
+          <span class="active">★</span> 
+          <span class="active">★</span> 
+          <span class="active">★</span> 
+          <span class="">★</span>
+				</div>
+				<p>Reviewed on 28/06/2023</p>
+			</div>
+		</div>
+	</div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Accueil</h4>
+                    <ul>
+                        <li><a href="acceuil.html">Derniers évènements</a></li>
+                        <li><a href="acceuil.html">Statistiques</a></li>
+                        <li><a href="acceuil.html">Témoignages</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>À Propos</h4>
+                    <ul>
+                        <li><a href="about.html">À propos de nous</a></li>
+                        <li><a href="about.html">Statistiques</li>
+                        <li><a href="about.html">Nos services</a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Don</h4>
+                    <ul>
+                        <li><a href="donation.html">formulaire</a></li>
+                        <li><a href="donation.html"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <div class="social-links">
+                        <a href="contact.html"><i class="fab fa-facebook-f"></i></a>
+                        <a href="contact.html"><i class="fab fa-twitter"></i></a>
+                        <a href="contact.html"><i class="fab fa-instagram"></i></a>
+                        <a href="contact.html"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </footer>
+    
+    <!-- Liens vers les scripts (inchangés) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+</body>
+</html>

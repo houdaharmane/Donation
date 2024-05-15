@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            margin-top: 30px; 
+        }
+        .search-icon {
+            color: #007bff;
+        }
+        .container-xxl {
+            width: 100%;
+            max-width: 1200px;
+            margin-right: auto;
+            margin-left: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .nav-bar {
+            border-bottom: 1px solid #007bff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+    
+        .navbar-nav {
+            display: flex;
+            flex-direction: row;
+        }
+        .navbar-nav a {
+            color: #007bff;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            margin-right: 30px; 
+        }    
+    
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+            margin-top: 0;
+        }
+        .search-icon {
+            color: #007bff;
+            order: -1;
+            margin-left: 20px; /* Espacement entre les éléments */
+            cursor: pointer; 
+        }
+        section {
+            padding: 0;
+            margin-left: 600px;
+        }
+
+.sec-title{
+  position:relative;
+  z-index: 1;
+  margin-bottom:80px;
+}
+
+.sec-title .title{
+  position: relative;
+  display: block;
+  font-size: 18px;
+  line-height: 24px;
+  color: #007bff;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.sec-title h2{
+  position: relative;
+  display: block;
+  font-size:30px;
+  line-height: 1em;
+  color: #222222;
+  font-weight: 600;
+  padding-bottom:18px;
+}
+
+.sec-title h2:before{
+  position:absolute;
+  content:'';
+  left:0px;
+  bottom:0px;
+  width:50px;
+  height:3px;
+  background-color:#d1d2d6;
+}
+
+.sec-title .text{
+  position: relative;
+  font-size: 16px;
+  line-height: 26px;
+  color: #848484;
+  font-weight: 400;
+  margin-top: 45px;
+}
+
+.sec-title.light h2{
+  color: #ffffff;
+}
+
+.sec-title.text-center h2:before{
+  left:50%;
+  margin-left: -25px;
+  margin-bottom: 20px;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+img {
+    width: 900px; /* Nouvelle largeur de l'image */
+    height: 500px; /* Hauteur automatique pour conserver les proportions */
+    display: block;
+    margin: 0 auto;
+    margin-top: 100px; /* Marge supérieure pour déplacer l'image vers le bas */
+}
+.list-style-one{
+    position:relative;
+  }
+  
+  .list-style-one li{
+    position:relative;
+    font-size:16px;
+    line-height:26px;
+    color: #222222;
+    font-weight:400;
+    padding-left:35px;
+    margin-bottom: 12px;
+  }
+  
+  .list-style-one li:before {
+      content: "\f058";
+      position: absolute;
+      left: 0;
+      top: 0px;
+      display: block;
+      font-size: 18px;
+      padding: 0px;
+      color: #007bff;
+      font-weight: 600;
+      -moz-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      line-height: 1.6;
+      font-family: "Font Awesome 5 Free";
+  }
+  
+  .list-style-one li a:hover{
+    color: #44bce2;
+  }
+  
+  .btn-style-one{
+    position: relative;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 30px;
+    color: #ffffff;
+    padding: 10px 30px;
+    font-weight: 600;
+    overflow: hidden;
+    letter-spacing: 0.02em;
+    background-color:#007bff;
+  }
+  
+  .btn-style-one:hover{
+    color: #ffffff;
+  }
+  .about-section {
+      position: relative;
+      padding: -20px 0;
+      margin-top: -50px;
+      display: flex;
+      flex-wrap: wrap; 
+      margin-top: -580px;
+      left:20px ;
+      justify-content: space-between; /* Espacement entre les éléments */
+  }
+  .about-section .sec-title{
+    margin-bottom: 20px;
+  }
+  
+  .about-section .content-column{
+    position: relative;
+    margin-bottom: 50px;
+    margin-right: 20px;
+  }
+  
+  .about-section .content-column .inner-column{
+    position: relative;
+    padding-left: 30px;
+  }
+  
+  .about-section .text{
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 26px;
+    color: #848484;
+    font-weight: 400;
+  }
+  
+  .about-section .list-style-one{
+    margin-bottom: 30px;
+  }
+  
+  .about-section .btn-box{
+    position: relative;
+  }
+  
+  .about-section .btn-box a{
+    padding: 15px 50px;
+  }
+  .lightbox-image{
+    width: 60%; 
+    margin: auto;
+    position: relative;
+    bottom: 40px; 
+    right: 480px;
+}
+
+.wrapper{
+    font-family: 'poppins',sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -90px; 
+}
+.wrapper h1{
+    font-size: 3em;
+
+    margin: 25px;
+}
+.content-box{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 1000px;
+    margin-top: 30px;
+}
+.card{
+    min-height: 220px;
+    width: 320px;
+    padding: 30px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #fff;
+    margin: 10px 4px;
+    box-shadow: 0px 15px 30px rgba(0,0,0,0.2);
+}
+.card i{
+    margin: 20px;
+    color:#007bff;
+}
+.card h2{
+    margin-bottom: 12px;
+    font-weight: 400;
+    text-align: center;
+}
+.card p{
+    color: #6c757d;
+    text-align: center;
+}
+.card:hover i,
+.card:hover p{
+    color: #fff;
+}
+.card:hover h2{
+    font-weight: 600;
+}
+.card:nth-child(1):hover{
+    background: linear-gradient(45deg,
+    #007bff,
+                                   rgba(136, 113, 199, 0.7)100% ) ,
+                                    url('bg.jpg');
+                                    background-size: cover;
+}
+.card:nth-child(2):hover{
+    background: linear-gradient(45deg,
+    #007bff ,
+                                   rgba(136, 113, 199, 0.7)100% ) ,
+                                    url('bg2.jpg');
+                                    background-size: cover;
+}
+.card:nth-child(3):hover{
+    background: linear-gradient(45deg,
+    #007bff,
+                                   rgba(136, 113, 199, 0.7)100% ) ,
+                                    url('bg3.jpg');
+                                    background-size: cover;
+}
+.card:nth-child(4):hover{
+    background: linear-gradient(45deg,
+    #007bff ,
+                                   rgba(136, 113, 199, 0.7)100% ) ,
+                                    url('bg4.jpg');
+                                    background-size: cover;
+}
+.card:nth-child(5):hover{
+    background: linear-gradient(45deg,
+    #007bff,
+                                   rgba(136, 113, 199, 0.7)100% ) ,
+                                    url('bg5.jpg');
+                                    background-size: cover;
+}
+.card:nth-child(6):hover{
+    background: linear-gradient(45deg,
+                                  #007bff ,
+                                   rgba(136, 113, 199, 0.7)100% ) ,
+                                    url('bg2.jpg');
+                                    background-size: cover;
+}
+@media(max-width:991px){
+    .wrapper{
+        padding: 25px;
+    }
+    .wrapper h1{
+        font-size: 2.5em;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    .content-box{
+        flex-direction: column;
+        width: 100%;
+    }
+    .card{
+        min-width: 300px;
+        margin: 10px auto;
+    }
+}
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            line-height: 1.5;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            min-height: 100vh; 
+            display: flex;
+            flex-direction: column; /* Permet au footer d'être en bas */
+        }
+        *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+        }
+        .container{
+        max-width: 1170px;
+        margin:auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        }
+        .row{
+        display: flex;
+        flex-wrap: wrap;
+        }
+        ul{
+        list-style: none;
+        }
+        .footer{
+        background-color: black;
+        padding: 70px 0;
+        margin-top: 0;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        margin-top: 50px; 
+        }
+        .footer-col{
+        width: 25%;
+        padding: 0 15px;
+        }
+        .footer-col h4{
+        font-size: 18px;
+        color: #ffffff;
+        text-transform: capitalize;
+        margin-bottom: 35px;
+        font-weight: 500;
+        position: relative;
+        }
+        .footer-col h4::before{
+        content: '';
+        position: absolute;
+        left:0;
+        bottom: -10px;
+        background-color: #007bff;
+        height: 2px;
+        box-sizing: border-box;
+        width: 50px;
+        }
+        .footer-col ul li:not(:last-child){
+        margin-bottom: 10px;
+        }
+        .footer-col ul li a{
+        font-size: 16px;
+        text-transform: capitalize;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 300;
+        color: #bbbbbb;
+        display: block;
+        transition: all 0.3s ease;
+        }
+        .footer-col ul li a:hover{
+        color: #ffffff;
+        padding-left: 8px;
+        }
+        .footer-col .social-links a{
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        background-color: rgba(255,255,255,0.2);
+        margin:0 10px 10px 0;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
+        color: #ffffff;
+        transition: all 0.5s ease;
+        }
+        .footer-col .social-links a:hover{
+        color: #24262b;
+        background-color: #ffffff;
+        }
+        
+        /*responsive*/
+        @media(max-width: 767px){
+        .footer-col{
+        width: 50%;
+        margin-bottom: 40px;
+        }
+        }
+        @media(max-width: 574px){
+        .footer-col{
+        width: 100%;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-bar bg-transparent">
+        <h1 class="m-0 text-primary" style="margin-left:20px; font-weight: bold; font-size: 2rem;color:#007bff;">Votre don compte, agissez maintenant!</h1>
+        <div class="navbar">
+            <div class="navbar-nav">
+                <a href="/" class="nav-item nav-link active">Acceuil</a>
+                <a href="about.html" class="nav-item nav-link active">À propos</a>
+                <a href="donation.html" class="nav-item nav-link active">Don</a>
+                <a href="contact.html" class="nav-item nav-link active">Contact</a>
+                <a href="Our team.html" class="nav-item nav-link active">Seisme</a>               
+        </div>
+        </div>
+    </div>
+    <h1 style="color: #007bff; margin:auto; margin: top 20px;">À propos de nous</h1>
+    <p style="text-align: center;">Notre site dédié aux séismes offre des informations cruciales et des ressources en temps réel,<br> apportant un soutien essentiel aux communautés touchées pour une récupération rapide et sécurisée.</p>
+
+    <div class="image-column col-lg-4 col-md-10 col-sm-12">
+        <div class="inner-column wow fadeInLeft">
+            <div class="image-1">
+                <a href="#" class="lightbox-image" data-fancybox="images">
+                    <img src="https://www.challenge.ma/wp-content/uploads/2023/09/S16-1024x576.jpeg" alt="" >
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="row">                
+                <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
+                    <div class="inner-column">
+                        <div class="sec-title">
+
+                            <h2>Ce site, créé en 2018, s'engage à soutenir les populations touchées par les séismes tels que celui d'El Haouz. </h2>
+                        </div>
+                        <div class="text">Notre équipe s'engage à aider les personnes touchées par les séismes à El Haouz. Grâce aux dons généreux que nous recevons, nous fournissons un soutien essentiel à ceux qui en ont le plus besoin. Chaque don est utilisé de manière responsable, offrant à chaque personne affectée ce dont elle a besoin pour se reconstruire et se remettre sur pied après cette tragédie.Pendant et après un don, nous sommes en mesure de séparer ces composants afin de donner au destinataire exactement ce dont il a besoin.</div>
+                        <ul class="list-style-one">
+                            <li>Faire un don</li>
+                            <li>Aide</li>
+                            <li>Bénévole</li>
+                        </ul>
+                        <div class="btn-box">
+                            <a href="contact.html" class="theme-btn btn-style-one">Contactez-nous</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="wrapper">
+    <div style="text-align: center; margin-top: 90px;">
+        <div style="margin-bottom: 20px;">
+            <h1 style="font-size: 2em;">Nos Services</h1>
+        </div>
+        <p>Ici, nous offrons des services de don pour soutenir les victimes de séismes.</p>
+             <div class="content-box">
+                <div class="card">
+                    <i class="bx bx-bar-chart-alt bx-md"></i>
+                    <h2>Collecte de fonds pour les victimes de séismes</h2>
+                  <p> L'argent collecté est utilisé pour fournir un soutien financier direct, acheter des fournitures essentielles et aider à la reconstruction. </p>
+    
+                </div>
+                <div class="card">
+                    <i class="bx bx-laptop bx-md"></i>
+                    <h2>Distribution de fournitures essentielles</h2>
+                   <p> Cela peut inclure la distribution de nourriture, d'eau, de couvertures, de médicaments et d'autres fournitures vitales aux survivants dans les zones touchées.</p>
+                         
+                </div>
+                <div class="card">
+                    <i class='bx bx-user bx-md'></i>
+    
+                    <h2>Aide d'urgence après un tremblement de terre</h2>
+                <p>Cette action consiste à distribuer des articles de première nécessité comme des vêtements, des articles d'hygiène, des couvertures, des kits de survie, etc...</p>
+                         
+                </div>
+                <div class="card">
+                    <i class="bx bx-mail-send bx-md"></i>
+                    <h2>Construction de logements sûrs post-séisme</h2>
+                    <p>Engager dans la construction et la rénovation de logements sûrs et résistants aux séismes pour les personnes ayant perdu leur foyer à cause du tremblement de terre.</p>
+                         
+                </div>
+                <div class="card">
+                    <i class="bx bx-bar-chart-alt bx-md"></i>
+                    <h2>Assistance médicale aux victimes de séismes</h2>
+                    <p> Offrir des services médicaux d'urgence, des soins médicaux, des traitements et des secours médicaux aux personnes blessées lors du séisme.</p>
+                         
+                </div>
+                <div class="card">
+                    <i class="bx bx-paint bx-md"></i>
+                    <h2>Soutien psychologique après un séisme</h2>
+                    <p>Fournir un soutien émotionnel et psychologique aux survivants du séisme, y compris des conseils, des services de soutien par des professionnels, et des programmes pour surmonter le traumatisme et le choc émotionnel.</p>
+                         
+                </div>
+             </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Accueil</h4>
+                    <ul>
+                        <li><a href="acceuil.html">Derniers évènements</a></li>
+                        <li><a href="acceuil.html">Statistiques</a></li>
+                        <li><a href="acceuil.html">Témoignages</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>À Propos</h4>
+                    <ul>
+                        <li><a href="about.html">À propos de nous</a></li>
+                        <li><a href="about.html">Statistiques</li>
+                        <li><a href="about.html">Nos services</a></li>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Don</h4>
+                    <ul>
+                        <li><a href="donation.html">formulaire</a></li>
+                        <li><a href="donation.html"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <div class="social-links">
+                        <a href="contact.html"><i class="fab fa-facebook-f"></i></a>
+                        <a href="contact.html"><i class="fab fa-twitter"></i></a>
+                        <a href="contact.html"><i class="fab fa-instagram"></i></a>
+                        <a href="contact.html"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </footer>
+</body>
+</html>
